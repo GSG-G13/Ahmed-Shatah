@@ -1,0 +1,14 @@
+.dark-mode {
+    background-color: #04001A;
+    color: #fff;
+  }
+
+  .t_button {
+    background-color: #04001A;
+    color: #fff;
+  }
+
+    .t_button:hover {
+        background-color: #fff;
+        color: #04001A;
+    }
