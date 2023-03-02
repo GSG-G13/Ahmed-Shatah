@@ -85,11 +85,6 @@ select {
   align-items: center;
 }
 .todo_list {
-  body {
-    background-color: #fff;
-    color: #333;
-  }
-
   min-width: 40%;
   list-style: none;
 }
