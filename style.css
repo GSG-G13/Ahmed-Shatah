@@ -1,18 +1,5 @@
 /* Toggle Button in the top right corner*/
 
-.dark-mode-toggle {
-  /*top right positioning*/
-  position: absolute;
-  top: 0;
-  right: 0;
-  /*styling*/
-  background-color: #fff;
-  color: #333;
-  padding: 10px;
-  border: 1px solid #333;
-  border-radius: 0 0 0 5px;
-  cursor: pointer;
-}
 * {
   margin: 0;
   padding: 0;
@@ -201,4 +188,19 @@ select {
   .container {
     width: 1170px;
   }
+}
+.icon-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+}
+.light-mode {
+  color: #fff;
+}
+
+
+i{
+  pointer-events: none;
 }
