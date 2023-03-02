@@ -66,6 +66,12 @@ function displayTodo(todo) {
     todoItem.classList.add("completed");
   }
 
+  const todoDelete = document.createElement("button");
+  todoDelete.classList.add("todo-action", "todo-delete");
+  todoDelete.innerText = "Delete";
+  todoActions.appendChild(todoDelete);
+  
+
   todoList.appendChild(todoItem);
 }
 
@@ -83,6 +89,8 @@ function deleteCheck(event) {
       todo.remove();
     });
   }
+  location.reload();
+
 }
 
 function filterTodo() {
