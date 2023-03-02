@@ -123,9 +123,6 @@ select {
   background: green;
 }
 
-.delete_btn:active {
-  background: #b65337;
-}
 
 .fa-trash,
 .fa-check {
@@ -141,6 +138,54 @@ select {
   transform: translateY(4rem) scale(0.4) rotateZ(20deg);
   opacity: 0;
 }
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .todo-action {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .todo-action:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .todo-done {
+    background-color: #008000;
+    color: #fff;
+    border-color: #008000;
+  }
+  
+  .todo-done:hover {
+    background-color: #006400;
+    border-color: #006400;
+  }
+  
+  .todo-edit {
+    background-color: #ffa500;
+    color: #fff;
+    border-color: #ffa500;
+  }
+  
+  .todo-edit:hover {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+  }
 
 @media (min-width: 768px) {
   .container {
