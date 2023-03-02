@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO App Shata | Ahmed </title>
+  </head>
+  <body>
+    <header>
+      <h1>What you have for today ?</h1>
+    </header>
+    <form>
+      <input type="text" placeholder="Busy Day hah ??" class="t_input" />
+      <button class="t_button" type="submit">
+        <i class="fas fa-plus-square"></i>
+      </button>
+      <div class="select">
+        <select name="todos" class="filter_todo">
+          <option value="all">All</option>
+          <option value="completed">Done</option>
+          <option value="uncompleted">Oh No !! </option>
+        </select>
+      </div>
+    </form>
+    <div class="container">
+      <ul class="t_list"></ul>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
