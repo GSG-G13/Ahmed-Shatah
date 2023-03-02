@@ -1,9 +1,14 @@
 // @DESC - This is CSS-Create-Dark-Light-Mode  issue code
 const toggleButton = document.querySelector("#dark-mode-toggle");
 const body = document.querySelector("body");
+const icon = document.querySelector("button i");
 
 toggleButton.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
+ 
+    icon.classList.add("light-mode");
+  
+  
 });
 
 const todoInput = document.querySelector(".t_input");
