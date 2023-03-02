@@ -6,7 +6,7 @@ const icon = document.querySelector("button i");
 toggleButton.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
  
-    icon.classList.add("light-mode");
+    icon.classList.toggle("light-mode");
   
   
 });
