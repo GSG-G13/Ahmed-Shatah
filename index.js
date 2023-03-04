@@ -82,14 +82,13 @@ function deleteCheck(event) {
     todo.classList.toggle("completed");
     toggleTodoLocalStorage(todo);
   } else if (item.classList.contains("todo-delete")) {
-    const todo = item.parentElement;
+    const todo = item.parentElement.parentElement;
     todo.classList.add("fall");
     removeTodoFromLocalStorage(todo);
     todo.addEventListener("transitionend", function () {
       todo.remove();
     });
   }
-  location.reload();
 
 }
 
