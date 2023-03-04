@@ -1,10 +1,10 @@
-/* Toggle Button in the top right corner*/
-
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
@@ -19,6 +19,7 @@ form {
   justify-content: center;
   align-items: center;
 }
+
 form input,
 form button {
   padding: 0.4rem;
@@ -26,34 +27,37 @@ form button {
   font-size: 1.6rem;
   background: white;
 }
+
 form button {
   color: #04001a;
   background: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 form button:hover {
   background: transparent;
   color: green;
 }
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: none;
   border: #ddd 1px solid;
-}
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-select {
   color: #000;
   width: 8rem;
   cursor: pointer;
   padding: 0.7rem;
 }
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
 .select::after {
   content: "\25bc";
   position: absolute;
@@ -62,15 +66,18 @@ select {
   right: 6px;
   pointer-events: none;
 }
+
 .select:hover::after {
   color: #583429;
 }
 
+/* Todo list styles */
 .todo_container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .todo_list {
   min-width: 40%;
   list-style: none;
@@ -106,10 +113,10 @@ select {
 .complete_btn {
   background: rgb(67, 179, 67);
 }
+
 .complete_btn:active {
   background: green;
 }
-
 
 .fa-trash,
 .fa-check {
@@ -121,42 +128,45 @@ select {
   opacity: 0.5;
   transform: scale(0.96);
 }
+
 .fall {
   transform: translateY(4rem) scale(0.4) rotateZ(20deg);
   opacity: 0;
 }
+
 .todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-action {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.todo-action:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.todo-done {
+  background-color: #008000;
+  color: #fff;
+  border-color: #008000;
+}
   
-  .todo-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .todo-action {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .todo-action:hover {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .todo-done {
-    background-color: #008000;
-    color: #fff;
-    border-color: #008000;
-  }
   
   .todo-done:hover {
     background-color: #006400;

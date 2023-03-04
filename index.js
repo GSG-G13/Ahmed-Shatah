@@ -5,10 +5,7 @@ const icon = document.querySelector("button i");
 
 toggleButton.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
- 
-    icon.classList.toggle("light-mode");
-  
-  
+  icon.classList.toggle("light-mode");
 });
 
 const todoInput = document.querySelector(".t_input");
@@ -70,7 +67,6 @@ function displayTodo(todo) {
   todoDelete.classList.add("todo-action", "todo-delete");
   todoDelete.innerText = "Delete";
   todoActions.appendChild(todoDelete);
-  
 
   todoList.appendChild(todoItem);
 }
@@ -89,7 +85,7 @@ function deleteCheck(event) {
       todo.remove();
     });
   }
-
+  displayTodo();
 }
 
 function filterTodo() {
@@ -161,21 +157,58 @@ function toggleTodoLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+
 function editTodo(event) {
   const item = event.target;
   if (item.classList.contains("todo-edit")) {
     const todo = item.parentElement.parentElement;
     const todoText = todo.querySelector(".todo-text");
-    const newTodoText = prompt("Edit Todo", todoText.innerText);
-    if (newTodoText != null) {
-      todoText.innerText = newTodoText;
-      const todoIndex = todo.dataset.id;
-      const todos = getTodosFromLocalStorage();
-      const todoObj = todos.find(function (todo) {
-        return todo.id === Number(todoIndex);
-      });
-      todoObj.text = newTodoText;
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
+    const todoInput = document.createElement("input");
+    todoInput.classList.add("todo-input");
+    todoInput.type = "text";
+    todoInput.value = todoText.innerText;
+    todo.insertBefore(todoInput, todoText);
+    todoText.style.display = "none";
+    todoInput.focus();
+
+    todoInput.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        const newTodoText = todoInput.value.trim();
+        if (newTodoText !== "") {
+          todoText.innerText = newTodoText;
+          todoText.style.display = "inline";
+          todoInput.remove();
+          const todoIndex = todo.dataset.id;
+          const todos = getTodosFromLocalStorage();
+          const todoObj = todos.find(function (todo) {
+            return todo.id === Number(todoIndex);
+          });
+          todoObj.text = newTodoText;
+          localStorage.setItem("todos", JSON.stringify(todos));
+        } else {
+          todo.remove();
+          removeTodoFromLocalStorage(todo);
+        }
+      }
+    });
+
+    todoInput.addEventListener("blur", function () {
+      const newTodoText = todoInput.value.trim();
+      if (newTodoText !== "") {
+        todoText.innerText = newTodoText;
+        todoText.style.display = "inline";
+        todoInput.remove();
+        const todoIndex = todo.dataset.id;
+        const todos = getTodosFromLocalStorage();
+        const todoObj = todos.find(function (todo) {
+          return todo.id === Number(todoIndex);
+        });
+        todoObj.text = newTodoText;
+        localStorage.setItem("todos", JSON.stringify(todos));
+      } else {
+        todo.remove();
+        removeTodoFromLocalStorage(todo);
+      }
+    });
   }
 }
